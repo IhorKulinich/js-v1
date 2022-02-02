@@ -44,7 +44,7 @@ TrelloPowerUp.initialize({
       
       'board-buttons': function(t, options){
         return [{
-          icon: coloricon,
+          icon: greyicon,
           text: 'OKADO :3',
           condition: 'always',
           callback: boardButtonCallback
