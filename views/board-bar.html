@@ -73,8 +73,8 @@
             </svg>
             <script>
                 var leftbar = document.getElementById("leftbardiv");
-                var barwidth = leftbar.width;
-                var barheight = leftbar.height;
+                var barwidth = leftbar.clientWidth;
+                var barheight = leftbar.clientHeight;
 
                 console.log("height: "+barheight+", width: "+barwidth);
                 document.getElementById("leftbarviewbox").setAttribute("width", barwidth);
