@@ -52,24 +52,24 @@
                 
                 <rect x="5" y="5" rx="5" ry="5" id="leftbarrect" class="metal hui"/>
                 
-                <circle id='home' cx="100" cy="100" r="80" fill="url(#homeimg)"/>
-                <text x="140" y="200" style="font-size: 8px;">Home</text>
+                <circle id='home' cx="20" cy="20" r="80" fill="url(#homeimg)"/>
+                <text x="20" y="45" style="font-size: 8px;">Home</text>
                 
-                <circle id='cell' cx="100" cy="220" r="80" fill="url(#cellimg)"/>
-                <text x="140" y="320" style="font-size: 8px;">Fields</text>
+                <circle id='cell' cx="20" cy="50" r="80" fill="url(#cellimg)"/>
+                <text x="20" y="75" style="font-size: 8px;">Fields</text>
                 
-                <circle id='table' cx="100" cy="340" r="80" fill="url(#tableimg)"/>
-                <text x="140" y="440" style="font-size: 8px;">Database</text>
+                <circle id='table' cx="20" cy="80" r="80" fill="url(#tableimg)"/>
+                <text x="20" y="105" style="font-size: 8px;">Database</text>
                 
-                <circle id='dash' cx="100" cy="460" r="80" fill="url(#dashimg)"/>
-                <text x="140" y="560" style="font-size: 8px;">Dashboard</text>
+                <circle id='dash' cx="20" cy="110" r="85" fill="url(#dashimg)"/>
+                <text x="20" y="135" style="font-size: 8px;">Dashboard</text>
                 
-                <circle id='team' cx="100" cy="680" r="80" fill="url(#teamimg)"/>
-                <text x="140" y="780" style="font-size: 8px;">Team</text>
-                
-                <circle id='wheel' cx="100" cy="900" r="80" fill="url(#wheelimg)"/>
-                <text x="140" y="1000" style="font-size: 8px;">Settings</text>
-                                
+                <circle id='team' cx="20" cy="140" r="80" fill="url(#teamimg)"/>
+                <text x="20" y="165" style="font-size: 8px;">Team</text>
+                <!--
+                <circle id='wheel' cx="30" cy="900" r="80" fill="url(#wheelimg)"/>
+                <text x="30" y="1000" style="font-size: 8px;">Settings</text>
+                -->            
             </svg>
             <script>
                 var leftbar = document.getElementById("leftbardiv");
@@ -86,8 +86,8 @@
                 console.log(document.getElementById("leftbarviewbox"));
                 console.log(document.getElementById("leftbarrect"));
 
-                var margcirc = ( barheight - 6*100 )/7;
-                var margleft = ( barwidth - 100 )/2;
+                var margcirc = ( barheight - 6*25 )/7;
+                var margleft = ( barwidth - 25 )/2;
             </script>
         </div>
         <div style="display: grid; grid-template-columns: calc( ( 100% - 10px ) / 3) calc( ( 100% - 10px ) / 3) calc( ( 100% - 10px ) / 3); grid-auto-rows: 100%; grid-column-gap: 5px; width: 100%; height: 100%;">
