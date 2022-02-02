@@ -8,7 +8,7 @@
     
     <div style="display: grid; grid-template-columns: 100px calc( 100% - 210px ) 100px; grid-auto-rows: 100%; grid-column-gap: 5px; width: 100%; height: calc( 100% - 5px );">
         <div id="leftbardiv" style="height: 100%;">
-            <svg xmlns="http://www.w3.org/2000/svg" id="leftbarviewbox">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="leftbarviewbox">
                 
                   <style type="text/css">
                     rect.metal {
@@ -78,13 +78,17 @@
                 var leftbar = document.getElementById("leftbardiv");
                 var barwidth = leftbar.offsetWidth;
                 var barheight = leftbar.offsetHeight;
-                console.log(barheight);
+
+                console.log("height: "+barheight+", width: "+barwidth);
                 document.getElementById("leftbarviewbox").setAttribute("width", barwidth);
                 document.getElementById("leftbarviewbox").setAttribute("heigth", barheight);
                 document.getElementById("leftbarviewbox").setAttribute("viewBox", "0 0 "+barheight+" "+barwidth);
                 document.getElementById("leftbarrect").setAttribute("width", barwidth-10);
                 document.getElementById("leftbarrect").setAttribute("heigth", barheight-10);
                 
+                console.log(document.getElementById("leftbarviewbox"));
+                console.log(document.getElementById("leftbarrect"));
+
                 var margcirc = ( barheight - 6*100 )/7;
                 var margleft = ( barwidth - 100 )/2;
             </script>

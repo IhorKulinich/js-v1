@@ -94,7 +94,7 @@ function addopttodiv(){
     
 }
 
-function setfieldpar(data,i,id){
+function setfieldpar(data,i,id,t){
     
     function fsback(){
         
@@ -128,7 +128,7 @@ function setfieldpar(data,i,id){
                 
                 window.settingtset.style.background = "green";
                 
-                window.settingset.addEventListener("submit", newparams.bind(null,data,i,id));
+                window.settingset.addEventListener("submit", newparams.bind(null,data,i,id,t));
                 
             });
             
@@ -150,7 +150,7 @@ function setfieldpar(data,i,id){
     
 }
 
-function newparams(data,i,id){
+function newparams(data,i,id,t){
     
     var ind;
     
@@ -204,80 +204,72 @@ function newparams(data,i,id){
     
     return t.set('board', 'shared', 'fieldset', datar)
     
-        .then(function(){
+    .then(function(){
             
-            document.getElementById("fieldsetting").style.display = "none";
+        document.getElementById("fieldsetting").style.display = "none";
         
-            document.getElementById("fieldsgroup").style.display = "block";
+        document.getElementById("fieldsgroup").style.display = "block";
             
-        });
+    });
     
 }
 
 //settingsgroup //fieldsgroup //fieldsetting //textsettings, settingtset
     
-t.render(function(){
+t.render(function(t){
         
     document.getElementById("fieldssettings").addEventListener("click", function(){
     
-    document.getElementById("fieldsgroup").style.display = "block";
-    
-    console.log("fields menu: "+document.getElementById("fieldsgroup").style.display);
-    
-    document.getElementById("settingsgroup").style.display = "none";
-    
-    function fback(){
+        document.getElementById("fieldsgroup").style.display = "block";
         
-        document.getElementById("settingsgroup").style.display = "block";
-    
-        document.getElementById("fieldsgroup").style.display = "none";
+        console.log("fields menu: "+document.getElementById("fieldsgroup").style.display);
         
-        document.getElementById("fback").removeEventListener("click", fback);
+        document.getElementById("settingsgroup").style.display = "none";
         
-    }
-    
-    document.getElementById("fback").addEventListener("click",fback);
+        function fback(){
+            
+            document.getElementById("settingsgroup").style.display = "block";
         
-    return t.get('board', 'shared', 'fieldset')
-      
-    .then(function(datar){
-          
-        console.log(datar);
-          
-        let data = datar.fields;
-        
-        for (var i=0; i<data.length; i++){
+            document.getElementById("fieldsgroup").style.display = "none";
             
-            var field = document.createElement("button");
+            document.getElementById("fback").removeEventListener("click", fback);
             
-            field.setAttribute("id", "fieldset"+data.id);
-            
-            document.getElementById("fieldsgroup").appendChild(field);
-            
-            document.getElementById("fieldset"+data.id).innerHTML = "<p style='display: inline;'>" + data[i].name + "</p><p style='text-align: right; display: inline;'>></p>";
-            
-            console.log(setfieldpar);
-            
-            document.getElementById("fieldset"+data.id).addEventListener("click", setfieldpar.bind(null,data,i,data[i].id));
-            
-            console.log(document.getElementById("fieldsgroup"));
-                
         }
-        /*
-        <button id="fieldssettings">
-            Data fields
-            <p style="text-align: rigth;">></p>
-        </button>
-        */
         
+        document.getElementById("fback").addEventListener("click",fback);
+            
+        return t.get('board', 'shared', 'fieldset')
+        
+        .then(function(datar){
+            
+            console.log(datar);
+            
+            var data = datar.fields;
+
+            console.log(data);
+            
+            for (var i=0; i<data.length; i++){
+                
+                var field = document.createElement("button");
+                
+                field.setAttribute("id", "fieldset"+data.id);
+                
+                document.getElementById("fieldsgroup").appendChild(field);
+                
+                document.getElementById("fieldset"+data.id).innerHTML = "<p style='display: inline;'>" + data[i].name + "</p><p style='text-align: right; display: inline;'>></p>";
+                
+                document.getElementById("fieldset"+data.id).addEventListener("click", setfieldpar.bind(null,data,i,data[i].id,t));
+                    
+            }
+            
         })
-      
-        .then(function(){
-          
-            t.sizeTo(document.body);
         
+        .then(function(){
+            
+            t.sizeTo(document.body);
+            
         });
       
     });
 
-});
+}.bind(null,t));
