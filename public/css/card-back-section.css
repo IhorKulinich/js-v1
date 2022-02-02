@@ -1,0 +1,18 @@
+body {
+    outline: 1px dashed lightgrey;
+    margin: 5px;
+    padding: 5px;
+  }
+  
+  #content {
+    outline: 1px dotted red;
+    padding: 5px;
+  }
+
+  .fieldgrid{
+    display: grid;
+    grid-template-columns: 30%;
+    grid-column-gap: 5%;
+    grid-row-gap: 20px;
+    grid-auto-rows: 60px;
+  }

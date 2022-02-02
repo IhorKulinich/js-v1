@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
+    <link rel="stylesheet" href="../public/css/board-bar.css">
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+  </head>
+  <body style="background: lightgrey; padding: 5px;">
+    
+    <div style="display: grid; grid-template-columns: 100px calc( 100% - 210px ) 100px; grid-auto-rows: 100%; grid-column-gap: 5px; width: 100%; height: calc( 100% - 5px );">
+        <div id="leftbardiv" style="height: 100%;">
+            <svg xmlns="http://www.w3.org/2000/svg" id="leftbarviewbox">
+                
+                  <style type="text/css">
+                    rect.metal {
+                      border-radius: 5px;
+                      padding: 5px;
+                      background: url('../img/menu.png') repeat-x #fff;
+                      border: 1px solid #999;
+                      border-bottom: 1px solid #666;
+                      box-shadow: inset 0px 0px 5px #999;
+                      box-shadow: 0px 2px 6px #777;
+                      background-size: contain;
+                    }
+                          
+                    rect.hui {
+                      z-index: 3;
+                      text-align: center;
+                      height: 15px;
+                      width: 82px;
+                      margin-left: 4px;
+                      margin-top: 4px;
+                      font-size: small;
+                    }
+                  </style>
+                  <defs>
+                    <pattern id="homeimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
+                      <image x="0" y="0" xlink:href="../img/smile.png"></image>
+                    </pattern>
+                    <pattern id="cellimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
+                      <image x="0" y="0" xlink:href="../img/cell.png"></image>
+                    </pattern>
+                    <pattern id="tableimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
+                      <image x="0" y="0" xlink:href="../img/table.png"></image>
+                    </pattern>
+                    <pattern id="dashimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
+                      <image x="0" y="0" xlink:href="../img/dashboard.png"></image>
+                    </pattern>
+                    <pattern id="teamimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
+                      <image x="0" y="0" xlink:href="../img/team.png"></image>
+                    </pattern>
+                    <pattern id="wheelimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
+                      <image x="0" y="0" xlink:href="../img/wheel.png"></image>
+                    </pattern>
+                </defs>
+                
+                <rect x="5" y="5" rx="5" ry="5" id="leftbarrect" class="metal hui"/>
+                
+                <circle id='home' cx="100" cy="100" r="80" fill="url(#homeimg)"/>
+                <text x="140" y="200" style="font-size: 8px;">Home</text>
+                
+                <circle id='cell' cx="100" cy="220" r="80" fill="url(#cellimg)"/>
+                <text x="140" y="320" style="font-size: 8px;">Fields</text>
+                
+                <circle id='table' cx="100" cy="340" r="80" fill="url(#tableimg)"/>
+                <text x="140" y="440" style="font-size: 8px;">Database</text>
+                
+                <circle id='dash' cx="100" cy="460" r="80" fill="url(#dashimg)"/>
+                <text x="140" y="560" style="font-size: 8px;">Dashboard</text>
+                
+                <circle id='team' cx="100" cy="680" r="80" fill="url(#teamimg)"/>
+                <text x="140" y="780" style="font-size: 8px;">Team</text>
+                
+                <circle id='wheel' cx="100" cy="900" r="80" fill="url(#wheelimg)"/>
+                <text x="140" y="1000" style="font-size: 8px;">Settings</text>
+                                
+            </svg>
+            <script>
+                var leftbar = document.getElementById("leftbardiv");
+                var barwidth = leftbar.offsetWidth;
+                var barheight = leftbar.offsetHeight;
+                console.log(barheight);
+                document.getElementById("leftbarviewbox").setAttribute("width", barwidth);
+                document.getElementById("leftbarviewbox").setAttribute("heigth", barheight);
+                document.getElementById("leftbarviewbox").setAttribute("viewBox", "0 0 "+barheight+" "+barwidth);
+                document.getElementById("leftbarrect").setAttribute("width", barwidth-10);
+                document.getElementById("leftbarrect").setAttribute("heigth", barheight-10);
+                
+                var margcirc = ( barheight - 6*100 )/7;
+                var margleft = ( barwidth - 100 )/2;
+            </script>
+        </div>
+        <div style="display: grid; grid-template-columns: calc( ( 100% - 10px ) / 3) calc( ( 100% - 10px ) / 3) calc( ( 100% - 10px ) / 3); grid-auto-rows: 100%; grid-column-gap: 5px; width: 100%; height: 100%;">
+          <div class="blured radied">
+              <button id="addfield">
+                add field
+              </button>
+              <form id="addfieldset" style="margin-top: -5px;">
+                
+              </form>
+          </div>
+          <div class="blured radied">
+              
+          </div>
+          <div class="blured radied">
+              
+          </div>
+        </div>
+        <div>
+        </div>    
+      </div>
+    <script src="../public/js/board-bar.js"></script>
+  </body>
+</html>
+
