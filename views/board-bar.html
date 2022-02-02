@@ -13,7 +13,6 @@
                   <style type="text/css">
                     rect.metal {
                       border-radius: 5px;
-                      padding: 5px;
                       background: url('../img/menu.png') repeat-x #fff;
                       border: 1px solid #999;
                       border-bottom: 1px solid #666;
@@ -25,8 +24,6 @@
                     rect.hui {
                       z-index: 3;
                       text-align: center;
-                      height: 15px;
-                      width: 82px;
                       margin-left: 4px;
                       margin-top: 4px;
                       font-size: small;
@@ -76,8 +73,8 @@
             </svg>
             <script>
                 var leftbar = document.getElementById("leftbardiv");
-                var barwidth = leftbar.offsetWidth;
-                var barheight = leftbar.offsetHeight;
+                var barwidth = leftbar.width;
+                var barheight = leftbar.height;
 
                 console.log("height: "+barheight+", width: "+barwidth);
                 document.getElementById("leftbarviewbox").setAttribute("width", barwidth);
