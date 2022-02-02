@@ -155,6 +155,10 @@ t.render(function(){
   .then(function(datar){
       
     let data = datar.fields;
+
+    console.log(datar);
+    
+    console.log(data);
     
     return t.get('card', 'shared', 'fieldcard')
     
