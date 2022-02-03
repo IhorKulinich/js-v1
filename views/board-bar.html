@@ -196,9 +196,8 @@
             
             var menus = ["homemenu","cellmenu","tablemenu","dashmenu","teammenu"];
             menus.forEach(setMenus);
-            
-            function over(elem){
-              var str = elem.target.id.split("menu")[0];
+
+            function showing(str){
               var el = document.getElementById(str+"circle");
               el.style["clip-path"] = "url(#"+str+"clip)";
               el.style["margin-left"] = "0";
@@ -211,10 +210,16 @@
               el.style["clip-path"] = "url(#"+str+"border)";
               el.style["margin-left"] = "0";
               el.style.opacity = "1";
-              el = document.getElementById(elem.target.id);
+              el = document.getElementById(str+"menu");
               el.style["margin-left"] = "50px";
-              el.removeEventListener("mouseover",over);
+              document.getElementById("hometextel").style.opacity = 1;
               document.getElementById(str+"textel").style.opacity = 1;
+            }
+            
+            function over(elem){
+              var str = elem.target.id.split("menu")[0];
+              showing(str);
+              document.getElementById(elem.target.id).removeEventListener("mouseover",over);
               var others = menus.filter((str) => str != elem.target.id);
               setout(others);
             }
@@ -232,17 +237,7 @@
                 el.style["margin-left"] = "18px";
                 el.addEventListener("mouseover",over);
               });
-              document.getElementById("homecircle").style["clip-path"] = "url(#homeclip)";
-              document.getElementById("homecircle").style["margin-left"] = "0";
-              document.getElementById("homecircle").style.opacity = "1";
-              document.getElementById("homecircleshad").style["clip-path"] = "url(#homeshadow)";
-              document.getElementById("homecircleshad").style["margin-left"] = "0";
-              document.getElementById("homecircleshad").style.opacity = "0.15";
-              document.getElementById("homecircleborder").style["clip-path"] = "url(#homeborder)";
-              document.getElementById("homecircleborder").style["margin-left"] = "0";
-              document.getElementById("homecircleborder").style.opacity = "1";
-              document.getElementById("homemenu").style["margin-left"] = "50px";
-              document.getElementById("hometextel").style.opacity = 1;
+              showing("home");
             }
 
             function menuout(){
@@ -254,18 +249,8 @@
             });
 
             document.getElementById("leftmenu").addEventListener("mouseleave",menuout);
-
-            document.getElementById("homecircle").style["clip-path"] = "url(#homeclip)";
-            document.getElementById("homecircle").style["margin-left"] = "0";
-            document.getElementById("homecircle").style.opacity = "1";
-            document.getElementById("homecircleshad").style["clip-path"] = "url(#homeshadow)";
-            document.getElementById("homecircleshad").style["margin-left"] = "0";
-            document.getElementById("homecircleshad").style.opacity = "0.15";
-            document.getElementById("homecircleborder").style["clip-path"] = "url(#homeborder)";
-            document.getElementById("homecircleborder").style["margin-left"] = "0";
-            document.getElementById("homecircleborder").style.opacity = "1";
-            document.getElementById("homemenu").style["margin-left"] = "50px";
-            document.getElementById("hometextel").style.opacity = 1;
+            showing("home");
+            
 
           </script>
         <div style="display: grid; grid-template-columns: calc( ( 100% - 10px ) / 3) calc( ( 100% - 10px ) / 3) calc( ( 100% - 10px ) / 3); grid-auto-rows: 100%; grid-column-gap: 5px; width: 100%; height: 100%;">
