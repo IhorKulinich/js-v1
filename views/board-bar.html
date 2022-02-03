@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../public/css/card.css">
     <link rel="stylesheet" href="../public/css/icon.css">
     <link rel="stylesheet" href="../public/css/buttons.css">
+    <link rel="stylesheet" href="../public/css/text.css">
     <script src="https://p.trellocdn.com/power-up.min.js"></script>
     <style>
 
@@ -243,81 +244,21 @@
 
             document.getElementById("leftmenu").addEventListener("mouseleave",menuout);
 
-            console.log(document.getElementById("svgmask"));
-
-            /*
-            function circlepath(cx,cy,r,id){
-              var path = document.createElement("path");
-              path.setAttribute("id", id+"path");
-              
-              dfunc = "M "+cx+", "+cy+"\n m -"+r+", 0 \n a "+r+","+r+" 0 1,0 "+(r*2)+",0 \n a "+r+","+r+" 0 1,0 -"+(r*2)+",0";
-              /*
-              <path d="
-                  M cx, cy
-                  m -r, 0
-                  a r,r 0 1,0 (r * 2),0
-                  a r,r 0 1,0 -(r * 2),0
-              "/>
-              
-              path.setAttribute("d",dfunc);
-              //fill="transparent" stroke="black"
-              path.setAttribute("fill", "red");
-              path.setAttribute("stroke", "black");
-
-              document.getElementById("svgmask").appendChild(path);   
-              path = document.getElementById(id+"path");
-              console.log(path);
-            }
-
-            var circlessvg = [{"text": "Home", "id": "home", "cx": "", "cy": 34, "r": ""},
-            {"text": "Fields", "id": "cell", "cx": "", "cy": 66, "r": ""},
-            {"text": "Table", "id": "table", "cx": "", "cy": 101, "r": ""},
-            {"text": "Dashboard", "id": "dash", "cx": "", "cy": 138, "r": ""},
-            {"text": "Team", "id": "team", "cx": "", "cy": 173, "r": ""}];
-
-            circlessvg.forEach(function(circobj){
-              circobj.cx = 0;
-              circobj.r = 22;
-
-              circlepath(circobj.cx, circobj.cy, circobj.r, circobj.id);
-
-              var textel = document.createElement("text");
-              textel.setAttribute("id", circobj.id+"textel");
-              textel.setAttribute("dy","70");
-              textel.setAttribute("class", "smalltext");
-              document.getElementById("svgmask").appendChild(textel);
-
-              var textpath = document.createElement("textPath");
-              textpath.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', "#"+circobj.id+"path");
-              //textpath.setAttributeNS(xlinkNS, "href", "#"+circobj.id+"path"); 
-              //textpath.setAttribute("xlink:href", "#"+circobj.id+"path");
-              textpath.setAttribute("id", circobj.id+"textpath");
-              document.getElementById(circobj.id+"textel").appendChild(textpath);
-
-              document.getElementById(circobj.id+"textpath").innerHTML = circobj.text;
-
-              console.log(document.getElementById(circobj.id+"textel"));
-              console.log(document.getElementById("svgmask"));
-            });
-
-            */
-            /*
-            <text dx="50">
-              <textPath xlink:href="#hometext" startOffset="60">
-                home
-              </textPath>
-            </text>
-            */
-
           </script>
         <div style="display: grid; grid-template-columns: calc( ( 100% - 10px ) / 3) calc( ( 100% - 10px ) / 3) calc( ( 100% - 10px ) / 3); grid-auto-rows: 100%; grid-column-gap: 5px; width: 100%; height: 100%;">
           <div class="blured radied">
-              <button id="addfield">
+            <div class="card block2" style="width: calc( 100% - 25px ); height: calc( 100% - 25px ); margin-left: 5px; margin-top: 5px;">
+              <div style="width: 40px; height: 40px; background: url('https://ihorkulinich.github.io/js-v1/img/pers.png') no-repeat; background-size: contain;"></div>
+              <h2></h2>
+            </div>
+            
+            <button id="addfield">
                 add field
               </button>
               <form id="addfieldset" style="margin-top: -5px;">
                 
               </form>
+
           </div>
           <div>
             <a href="trying.html">
