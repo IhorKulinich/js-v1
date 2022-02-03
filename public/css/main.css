@@ -1,0 +1,26 @@
+body{
+    scrollbar-3d-light-color: #c8e0f7;
+    scrollbar-arrow-color: black;
+    scrollbar-dark-shadow-color: black;
+    scrollbar-face-color: #98bde0;
+    scrollbar-highlight-color: #b6d1eb;
+    scrollbar-shadow-color: #6c8dab;
+    scrollbar-track-color: #e7eaec;
+
+    margin: 0px;
+    font-size: 12px;
+    /*font-family: Tahoma, Arial, sans-serif;*/
+    height: 100%;
+}
+
+#back{
+    margin:0;
+    margin-top: 0px;
+    bottom: 0;
+    position: fixed;
+    background: url('../img/bg.png') repeat, url('../img/bg.jpg') repeat;
+    background-blend-mode: lighten; /*lighten, difference,exclusion,multiply */
+    height: calc( 100vh + 200px );
+    width: 100vw; 
+    z-index: -1;
+}
