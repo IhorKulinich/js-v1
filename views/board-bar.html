@@ -3,92 +3,309 @@
     <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
     <link rel="stylesheet" href="../public/css/board-bar.css">
     <script src="https://p.trellocdn.com/power-up.min.js"></script>
+    
+    <style>
+
+      
+      
+    </style>
   </head>
   <body style="background: lightgrey; padding: 5px;">
     
-    <div style="display: grid; grid-template-columns: 100px calc( 100% - 210px ) 100px; grid-auto-rows: 100%; grid-column-gap: 5px; width: 100%; height: calc( 100% - 5px );">
-        <div id="leftbardiv" style="height: 100%;">
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="leftbarviewbox">
-                
-                  <style type="text/css">
-                    .metal {
-                      border-radius: 5px;
-                      background: url('https://ihorkulinich.github.io/js-v1/img/menu.png') repeat-x #fff;
-                      border: 1px solid #999;
-                      border-bottom: 1px solid #666;
-                      box-shadow: inset 0px 0px 5px #999;
-                      box-shadow: 0px 2px 6px #777;
-                      background-size: contain;
-                    }
-                          
-                    .hui {
-                      text-align: center;
-                      margin-left: 4px;
-                      margin-top: 4px;
-                      font-size: small;
-                    }
-                  </style>
-                  <defs>
-                    <pattern id="homeimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
-                      <image x="0" y="0" xlink:href="https://ihorkulinich.github.io/js-v1/img/smile.png"></image>
-                    </pattern>
-                    <pattern id="cellimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
-                      <image x="0" y="0" xlink:href="https://ihorkulinich.github.io/js-v1/img/cell.png"></image>
-                    </pattern>
-                    <pattern id="tableimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
-                      <image x="0" y="0" xlink:href="https://ihorkulinich.github.io/js-v1/img/table.png"></image>
-                    </pattern>
-                    <pattern id="dashimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
-                      <image x="0" y="0" xlink:href="https://ihorkulinich.github.io/js-v1/img/dashboard.png"></image>
-                    </pattern>
-                    <pattern id="teamimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
-                      <image x="0" y="0" xlink:href="https://ihorkulinich.github.io/js-v1/img/team.png"></image>
-                    </pattern>
-                    <pattern id="wheelimg" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
-                      <image x="0" y="0" xlink:href="https://ihorkulinich.github.io/js-v1/img/wheel.png"></image>
-                    </pattern>
-                </defs>
-                
-                <rect x="5" y="5" rx="5" ry="5" id="leftbarrect" class="metal hui"/>
-                
-                <circle id='home' cx="20" cy="20" r="10" fill="url(#homeimg)"/>
-                <text x="20" y="45" style="font-size: 8px;">Home</text>
-                
-                <circle id='cell' cx="20" cy="50" r="10" fill="url(#cellimg)"/>
-                <text x="20" y="75" style="font-size: 8px;">Fields</text>
-                
-                <circle id='table' cx="20" cy="80" r="10" fill="url(#tableimg)"/>
-                <text x="20" y="105" style="font-size: 8px;">Database</text>
-                
-                <circle id='dash' cx="20" cy="110" r="10" fill="url(#dashimg)"/>
-                <text x="20" y="135" style="font-size: 8px;">Dashboard</text>
-                
-                <circle id='team' cx="20" cy="140" r="10" fill="url(#teamimg)"/>
-                <text x="20" y="165" style="font-size: 8px;">Team</text>
-                <!--
-                <circle id='wheel' cx="30" cy="900" r="80" fill="url(#wheelimg)"/>
-                <text x="30" y="1000" style="font-size: 8px;">Settings</text>
-                -->            
-            </svg>
-            <script>
-                var leftbar = document.getElementById("leftbardiv");
-                var barwidth = leftbar.clientWidth;
-                var barheight = leftbar.clientHeight;
+    <div style="display: grid; grid-template-columns: 110px calc( 100% - 230px ) 110px; grid-auto-rows: 100%; grid-column-gap: 5px; width: 100%; height: 200px;">
+        <div id="leftbardiv">
+          
+              <div id="leftmenu" style="height: calc( 100% - 6px ) ; width: 80px; display: inline-block; z-index: 5;">
+                <div style="height: 100% ; width: 65px;" class="metal hui shadowed">
 
-                console.log("height: "+barheight+", width: "+barwidth);
-                document.getElementById("leftbarviewbox").setAttribute("width", barwidth);
-                document.getElementById("leftbarviewbox").setAttribute("heigth", barheight);
-                document.getElementById("leftbarviewbox").setAttribute("viewBox", "0 0 "+barheight+" "+barwidth);
-                document.getElementById("leftbarrect").setAttribute("width", barwidth-10);
-                document.getElementById("leftbarrect").setAttribute("heigth", barheight-10);
-                
-                console.log(document.getElementById("leftbarviewbox"));
-                console.log(document.getElementById("leftbarrect"));
+                </div>
+                <div style="margin-top: -195px; z-index: 5;">
+                  <div id="homemenu" style="background: url('https://ihorkulinich.github.io/js-v1/img/smile.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-top: 15px;" class="circle-link icon menuicon"></div>
+                  <div id="cellmenu" style="background: url('https://ihorkulinich.github.io/js-v1/img/cell.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-top: 47;" class="circle-link icon menuicon"></div>
+                  <div id="tablemenu" style="background: url('https://ihorkulinich.github.io/js-v1/img/table.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-top: 83;" class="circle-link icon menuicon"></div>
+                  <div id="dashmenu" style="background: url('https://ihorkulinich.github.io/js-v1/img/dashboard.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-top: 120;" class="circle-link icon menuicon"></div>
+                  <div id="teammenu" style="background: url('https://ihorkulinich.github.io/js-v1/img/team.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-top: 155;" class="circle-link icon menuicon"></div>
+              
+                </div>
+              </div>
+              <div style="width: 30px; height: calc( 100% - 5px ); display: block; margin-left: -15px; margin-right: 10px; float: right;" id="circlesblock">
 
-                var margcirc = ( barheight - 6*25 )/7;
-                var margleft = ( barwidth - 25 )/2;
-            </script>
-        </div>
+                <svg id="svgmask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs id="svgdefs">
+                    <style>
+                      .smalltext{
+                        font: italic 10px sans-serif;
+                        letter-spacing: 2px;
+                        fill: rgb(85, 85, 85);
+                        transition: opacity 1s ease .2s;
+                      }
+                    </style>
+
+                    <path id="hometext">
+                      <circle cx="0" cy="34" r="22" fill="white" />
+                    </path>
+
+                    <clipPath id="homeshadow">
+                      <circle cx="0" cy="34" r="22" fill="white" />
+                    </clipPath>
+                    <clipPath id="cellshadow">
+                      <circle cx="0" cy="66" r="22" fill="white" />
+                    </clipPath>
+                    <clipPath id="tableshadow">
+                      <circle cx="0" cy="101" r="22" fill="white" />
+                    </clipPath>
+                    <clipPath id="dashshadow">
+                      <circle cx="0" cy="138" r="22" fill="white" />
+                    </clipPath>
+                    <clipPath id="teamshadow">
+                      <circle cx="0" cy="173" r="22" fill="white" />
+                    </clipPath>
+
+                    <clipPath id="homeborder">
+                      <circle cx="0" cy="34" r="21" fill="white" />
+                    </clipPath>
+                    <clipPath id="cellborder">
+                      <circle cx="0" cy="67" r="21" fill="white" />
+                    </clipPath>
+                    <clipPath id="tableborder">
+                      <circle cx="0" cy="102" r="21" fill="white" />
+                    </clipPath>
+                    <clipPath id="dashborder">
+                      <circle cx="0" cy="139" r="21" fill="white" />
+                    </clipPath>
+                    <clipPath id="teamborder">
+                      <circle cx="0" cy="174" r="21" fill="white" />
+                    </clipPath>
+                    
+                    <clipPath id="homeclip">
+                      <circle cx="0" cy="34" r="20" fill="white" />
+                    </clipPath>
+                    <clipPath id="cellclip">
+                      <circle cx="0" cy="67" r="20" fill="white" />
+                    </clipPath>
+                    <clipPath id="tableclip">
+                      <circle cx="0" cy="102" r="20" fill="white" />
+                    </clipPath>
+                    <clipPath id="dashclip">
+                      <circle cx="0" cy="139" r="20" fill="white" />
+                    </clipPath>
+                    <clipPath id="teamclip">
+                      <circle cx="0" cy="174" r="20" fill="white" />
+                    </clipPath>
+                  </defs>
+
+                  <path id="homepath" d="M 0, 34
+                    m -30, 0 
+                    a 30,30 0 1,0 60,0 
+                    a 30,30 0 1,0 -60,0" fill="transparent" />
+                  <text id="hometextel" dx="60" class="smalltext" textLength="300" lengthAdjust="spacing" style="opacity: 0;">
+                    <textPath xlink:href="#homepath" id="hometextpath">Home</textPath>
+                  </text>
+
+                  <path id="cellpath" d="M 0, 66
+                    m -30, 0 
+                    a 30,30 0 1,0 60,0 
+                    a 30,30 0 1,0 -60,0" fill="transparent" />
+                  <text id="celltextel" dx="60" class="smalltext" textLength="300" lengthAdjust="spacing" style="opacity: 0;">
+                    <textPath xlink:href="#cellpath" id="celltextpath">Fields</textPath>
+                  </text>
+
+                  <path id="tablepath" d="M 0, 101
+                    m -30, 0 
+                    a 30,30 0 1,0 60,0 
+                    a 30,30 0 1,0 -60,0" fill="transparent" />
+                  <text id="tabletextel" dx="60" class="smalltext" textLength="300" lengthAdjust="spacing" style="opacity: 0;">
+                    <textPath xlink:href="#tablepath" id="tabletextpath">Table</textPath>
+                  </text>
+
+                  <path id="dashpath" d="M 0, 138
+                    m -30, 0 
+                    a 30,30 0 1,0 60,0 
+                    a 30,30 0 1,0 -60,0" fill="transparent" />
+                  <text id="dashtextel" dx="60" class="smalltext" textLength="300" lengthAdjust="spacing" style="opacity: 0;">
+                    <textPath xlink:href="#dashpath" id="dashtextpath">Dashboard</textPath>
+                  </text>
+
+                  <path id="teampath" d="M 0, 173
+                    m -30, 0 
+                    a 30,30 0 1,0 60,0 
+                    a 30,30 0 1,0 -60,0" fill="transparent" />
+                  <text id="teamtextel" dx="65" class="smalltext" textLength="300" lengthAdjust="spacing" style="opacity: 0;">
+                    <textPath xlink:href="#teampath" id="teamtextpath">Team</textPath>
+                  </text>
+                  
+                </svg>
+                <div id="homecircleshad">
+                </div>
+                <div id="homecircleborder">
+                </div>
+                <div id="homecircle" class="metal hui">
+                </div>
+                <div id="cellcircleshad">
+                </div>
+                <div id="cellcircleborder">
+                </div>
+                <div id="cellcircle" class="metal hui">
+                </div>
+                <div id="tablecircleshad">
+                </div>
+                <div id="tablecircleborder">
+                </div>
+                <div id="tablecircle" class="metal hui">
+                </div>
+                <div id="dashcircleshad">
+                </div>
+                <div id="dashcircleborder">
+                </div>
+                <div id="dashcircle" class="metal hui">
+                </div>
+                <div id="teamcircleshad">
+                </div>
+                <div id="teamcircleborder">
+                </div>
+                <div id="teamcircle" class="metal hui">
+                </div>
+    
+                
+              </div>
+          </div>
+          <script>
+            var widmask = document.getElementById("circlesblock").clientWidth;
+            var heimask = document.getElementById("circlesblock").clientHeight;
+
+            document.getElementById("svgmask").setAttribute("width", widmask);
+            document.getElementById("svgmask").setAttribute("height", heimask);
+
+            document.getElementById("svgmask").setAttribute("viewBox", "0 0 "+widmask+" "+heimask);
+
+            function setMenus(id){
+              var str = id.split("menu")[0];
+              var els = [str+"circleshad", str+"circleborder", str+"circle"];
+              els.forEach(function(el){
+                el = document.getElementById(el);
+                el.style.width = widmask+"px";
+                el.style.height = heimask+"px";
+                el.style["margin-top"] = -heimask+"px";
+              });
+            }
+            
+            var menus = ["homemenu","cellmenu","tablemenu","dashmenu","teammenu"];
+            menus.forEach(setMenus);
+            
+            function over(elem){
+              var str = elem.target.id.split("menu")[0];
+              var el = document.getElementById(str+"circle");
+              el.style["clip-path"] = "url(#"+str+"clip)";
+              el.style["margin-left"] = "0";
+              el.style.opacity = "1";
+              el = document.getElementById(str+"circleshad");
+              el.style["clip-path"] = "url(#"+str+"shadow)";
+              el.style["margin-left"] = "0";
+              el.style.opacity = "0.15";
+              el = document.getElementById(str+"circleborder");
+              el.style["clip-path"] = "url(#"+str+"border)";
+              el.style["margin-left"] = "0";
+              el.style.opacity = "1";
+              el = document.getElementById(elem.target.id);
+              el.style["margin-left"] = "50px";
+              el.removeEventListener("mouseover",over);
+              document.getElementById(str+"textel").style.opacity = 1;
+              var others = menus.filter((str) => str != elem.target.id);
+              setout(others);
+            }
+
+            function setout(arr){
+              arr.forEach(function(id){
+                var str = id.split("menu")[0];
+                document.getElementById(str+"textel").style.opacity = 0;
+                var els = [str+"circleshad", str+"circleborder", str+"circle"];
+                els.forEach(function(el){
+                  document.getElementById(el).style.opacity = "0";
+                  document.getElementById(el).style["margin-left"]="-20px";
+                });
+                var el = document.getElementById(id);
+                el.style["margin-left"] = "18px";
+                el.addEventListener("mouseover",over);
+              });
+            }
+
+            function menuout(){
+              setout(menus);
+            }
+
+            menus.forEach(function(id){
+              document.getElementById(id).addEventListener("mouseover",over);
+            });
+
+            document.getElementById("leftmenu").addEventListener("mouseleave",menuout);
+
+            console.log(document.getElementById("svgmask"));
+
+            /*
+            function circlepath(cx,cy,r,id){
+              var path = document.createElement("path");
+              path.setAttribute("id", id+"path");
+              
+              dfunc = "M "+cx+", "+cy+"\n m -"+r+", 0 \n a "+r+","+r+" 0 1,0 "+(r*2)+",0 \n a "+r+","+r+" 0 1,0 -"+(r*2)+",0";
+              /*
+              <path d="
+                  M cx, cy
+                  m -r, 0
+                  a r,r 0 1,0 (r * 2),0
+                  a r,r 0 1,0 -(r * 2),0
+              "/>
+              
+              path.setAttribute("d",dfunc);
+              //fill="transparent" stroke="black"
+              path.setAttribute("fill", "red");
+              path.setAttribute("stroke", "black");
+
+              document.getElementById("svgmask").appendChild(path);   
+              path = document.getElementById(id+"path");
+              console.log(path);
+            }
+
+            var circlessvg = [{"text": "Home", "id": "home", "cx": "", "cy": 34, "r": ""},
+            {"text": "Fields", "id": "cell", "cx": "", "cy": 66, "r": ""},
+            {"text": "Table", "id": "table", "cx": "", "cy": 101, "r": ""},
+            {"text": "Dashboard", "id": "dash", "cx": "", "cy": 138, "r": ""},
+            {"text": "Team", "id": "team", "cx": "", "cy": 173, "r": ""}];
+
+            circlessvg.forEach(function(circobj){
+              circobj.cx = 0;
+              circobj.r = 22;
+
+              circlepath(circobj.cx, circobj.cy, circobj.r, circobj.id);
+
+              var textel = document.createElement("text");
+              textel.setAttribute("id", circobj.id+"textel");
+              textel.setAttribute("dy","70");
+              textel.setAttribute("class", "smalltext");
+              document.getElementById("svgmask").appendChild(textel);
+
+              var textpath = document.createElement("textPath");
+              textpath.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', "#"+circobj.id+"path");
+              //textpath.setAttributeNS(xlinkNS, "href", "#"+circobj.id+"path"); 
+              //textpath.setAttribute("xlink:href", "#"+circobj.id+"path");
+              textpath.setAttribute("id", circobj.id+"textpath");
+              document.getElementById(circobj.id+"textel").appendChild(textpath);
+
+              document.getElementById(circobj.id+"textpath").innerHTML = circobj.text;
+
+              console.log(document.getElementById(circobj.id+"textel"));
+              console.log(document.getElementById("svgmask"));
+            });
+
+            */
+            /*
+            <text dx="50">
+              <textPath xlink:href="#hometext" startOffset="60">
+                home
+              </textPath>
+            </text>
+            */
+
+          </script>
         <div style="display: grid; grid-template-columns: calc( ( 100% - 10px ) / 3) calc( ( 100% - 10px ) / 3) calc( ( 100% - 10px ) / 3); grid-auto-rows: 100%; grid-column-gap: 5px; width: 100%; height: 100%;">
           <div class="blured radied">
               <button id="addfield">
@@ -98,11 +315,13 @@
                 
               </form>
           </div>
-          <div class="blured radied">
-              
+          <div style="background: url('https://ihorkulinich.github.io/js-v1/img/smile.png') no-repeat; background-size: contain;">
+            
           </div>
           <div class="blured radied">
-              
+            <div class="card block2">
+              <div style="width: 50px; height: 50px; background: url('https://ihorkulinich.github.io/js-v1/img/wheel.png') no-repeat; background-size: contain;"></div>
+            </div>
           </div>
         </div>
         <div>
