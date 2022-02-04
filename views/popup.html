@@ -34,73 +34,66 @@
         таймер-трекер
         доки
     -->
-    <div style="padding: 10px;">
+    <div style="padding: 10px; width: 280px;">
+
         <a href="fields.popup.html" class="CTA white-matte choosepop">
-            <img src="../img/fields.png" width="15px" height="15px">
-            <h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px;">Fields</h2>
+            <div style="display: grid; grid-template-columns: 30px calc( 100% - 30px ); margin-left: 20%;">
+                <div><img src="../img/fields.png" width="30px" height="30px"></div>
+                <div><h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px; ">Fields</h2></div>
+            </div>
         </a>
+
         <a href="#" class="CTA white-matte choosepop">
-            <h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px;">Statuses</h2>
+            <div style="display: grid; grid-template-columns: 30px calc( 100% - 30px ); margin-left: 15%;">
+                <div><img src="../img/fields.png" width="30px" height="30px"></div>
+                <div><h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px; ">Statuses</h2></div>
+            </div>
         </a>
+
         <a href="#" class="CTA white-matte choosepop">
-            <h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px;">Tasks</h2>
+            <div style="display: grid; grid-template-columns: 30px calc( 100% - 30px ); margin-left: 23%;">
+                <div><img src="../img/fields.png" width="30px" height="30px"></div>
+                <div><h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px; ">Tasks</h2></div>
+            </div>
         </a>
+
         <a href="#" class="CTA white-matte choosepop">
-            <img src="../img/mails.png"" width="15px" height="15px">
-            <h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px;">Mails</h2>
+            <div style="display: grid; grid-template-columns: 30px calc( 100% - 30px ); margin-left: 23%;">
+                <div><img src="../img/mails.png" width="30px" height="30px"></div>
+                <div><h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px; ">Mails</h2></div>
+            </div>
         </a>
+        
         <a href="#" class="CTA white-matte choosepop">
-            <h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px;">Tasks</h2>
+            <div style="display: grid; grid-template-columns: 30px calc( 100% - 30px ); margin-left: 15%;">
+                <div><img src="../img/mails.png" width="30px" height="30px"></div>
+                <div><h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px; ">Comments</h2></div>
+            </div>
         </a>
+
         <a href="#" class="CTA white-matte choosepop">
-            <h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px;">Comments</h2>
+            <div style="display: grid; grid-template-columns: 30px calc( 100% - 30px ); margin-left: 15%;">
+                <div><img src="../img/mails.png" width="30px" height="30px"></div>
+                <div><h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px; ">Cheklist</h2></div>
+            </div>
         </a>
+
         <a href="#" class="CTA white-matte choosepop">
-            <h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px;">Cheklist</h2>
+            <div style="display: grid; grid-template-columns: 30px calc( 100% - 30px ); margin-left: 23%;">
+                <div><img src="../img/mails.png" width="30px" height="30px"></div>
+                <div><h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px; ">Times</h2></div>
+            </div>
         </a>
+
         <a href="#" class="CTA white-matte choosepop">
-            <h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px;">Times</h2>
+            <div style="display: grid; grid-template-columns: 30px calc( 100% - 30px ); margin-left: 12%;">
+                <div><img src="../img/folders.png" width="30px" height="30px"></div>
+                <div><h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px; ">Documents</h2></div>
+            </div>
         </a>
-        <a href="#" class="CTA white-matte choosepop">
-            <img src="../img/folders.png" width="15px" height="15px">
-            <h2 style="margin-left: 10px; margin-bottom: 0px; margin-right: 10px;">Documents</h2>
-        </a>
+
     </div>
 
-    <form id="settingsgroup">
-        <button id="fieldssettings">
-            <p style="display: inline;">Data fields</p>
-            <p style="text-align: rigth; display: inline;">></p>
-        </button>
-    </form>
-    <form id="fieldsgroup" style="display: none;">
-        <div style="width: calc( 100% - 10px ); margin-left: 5px; height: 40px;">
-           <button id="fback" style="display: inline;">&#60;</button>
-           <hr class="fss">
-        </div>
-    </form>
-    <form id="fieldsetting" style="display: none;">
-       <div style="width: calc( 100% - 10px ); margin-left: 5px; height: 40px;">
-           <button id="fsback" style="display: inline;">&#60;</button>
-           <hr class="fs">
-        </div>
-        <fieldset id="textsettings" style="display: none;">
-            <label for="nameset">Name:</label>
-            <input type="text" value="" id="nameset">
-            <label for="typeset">Name:</label>
-            <input id="typeset" list="typelistset">
-            
-            <datalist id="typeset">
-                <option value="Text">
-                <option value="List">
-            </datalist>
-        </fieldset>
-        <fieldset id="listsettings" style="display: none;">
-            
-            
-        </fieldset>
-        <button style="background: grey;" id="settingset"></button>
-    </form>
     <script src="../public/js/popup.js"></script>
   </body>
 </html>
