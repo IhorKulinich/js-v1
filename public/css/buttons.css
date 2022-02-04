@@ -10,12 +10,12 @@
     box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5), inset 0px -1px 0px rgba(0,0,0,0.2),  0px 0px 5px rgba(0,0,0,0.05);
 }
   
-.white-matte a, a.white-matte{
+.white-matte a, a.white-matte, .white-matte button, button.white-matte{
     text-shadow: 0px 1px #fff;
     color:#777; 
 }
   
-.white-matte.active, a.white-matte:active{
+.white-matte.active, a.white-matte:active, button.white-matte:active{
     background:#eee;
     -moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.2),  0px 1px 0px rgba(255,255,255,1);
     -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.2),  0px 1px 0px rgba(255,255,255,1);
@@ -34,14 +34,14 @@
     box-shadow: inset 0px -1px 0px rgba(0,0,0,0.2), 0px 0px 5px rgba(0,0,0,0.2);
 }
   
-.emerald.active, a.emerald:active{
+.emerald.active, a.emerald:active, button.emerald:active{
     background:#5eaa30;
     -moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.2),  0px 1px 0px rgba(255,255,255,1);
     -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.2),  0px 1px 0px rgba(255,255,255,1);
     box-shadow: inset 0px 1px 2px rgba(0,0,0,0.2),  0px 1px 0px rgba(255,255,255,1);
 }
   
-.emerald a, a.emerald{
+.emerald a, a.emerald, .emerald button, button.emerald{
     text-shadow:none;
     color:#fff;
 }
@@ -143,3 +143,94 @@ a.CTA{
     top:8px;
     left:2px;
 }
+
+select.minimal {
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%),
+      linear-gradient(to right, #ccc, #ccc);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+  }
+  
+  select.minimal:focus {
+    background-image:
+      linear-gradient(45deg, green 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, green 50%),
+      linear-gradient(to right, #ccc, #ccc);
+    background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: green;
+    outline: 0;
+  }
+
+  select {
+
+    /* styling */
+    background-color: white;
+    border: thin solid rgb(110, 110, 114);
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+  
+    /* reset */
+  
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .manylegends{
+    padding:5px;
+    position:absolute;
+    border: 2px solid transparent;
+    border-top-color: grey;
+    border-right-color: grey;
+    border-left-color: grey;
+  }
+
+  .manylegends legend{
+    padding: 0 10px;
+  }
+  
+  
+  .manylegends:nth-of-type(2){
+    transform: rotate(180deg);
+  }
+  .manylegends:nth-of-type(2)>legend{
+    transform: rotate(180deg);
+  }
+
+  .dopgrid{
+    border-color: transparent;
+    padding-top: 30px;
+    padding-left: 15px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  .horizonted{
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    padding: 5px;
+  }

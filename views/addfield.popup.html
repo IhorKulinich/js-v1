@@ -21,29 +21,102 @@
     <div id="back">
     </div>
 
+    <div style="width: 100%; height: 30px; display: grid; grid-template-columns: 70px 40px calc( 100% - 100px ); grid-column-gap: 10px; padding: 5px;">
+        <div>
+            <a href="fieldlist.popup.html" class="left-button white-matte">
+                <span style="padding-left: 12px;">
+                &#8592;
+                </span>
+            </a>
+        </div>
+        <div>
+            <p style="padding-top: 7px;">
+                Back
+            </p>
+        </div>
+        <div style="text-align: center;">
+            <h2>Field edit</h2>
+        </div>
+    </div>
 
-    <form id="fieldsetting" style="display: none;">
-        <div style="width: calc( 100% - 10px ); margin-left: 5px; height: 40px;">
-            <button id="fsback" style="display: inline;">&#60;</button>
-            <hr class="fs">
-         </div>
-         <fieldset id="textsettings" style="display: none;">
+    <div style="width: 100%; padding: 5px;">
+    <form id="fieldsetting">
+        
+         <fieldset id="textsettings">
              <label for="nameset">Name:</label>
-             <input type="text" value="" id="nameset">
-             <label for="typeset">Name:</label>
-             <input id="typeset" list="typelistset">
-             
-             <datalist id="typeset">
-                 <option value="Text">
-                 <option value="List">
-             </datalist>
+             <input type="text" value="" id="nameset" style="width: 100%;">
+
+             <label for="typeset">Type:</label>
+             <select id="typelistset" class="minimal" style="width: 100%;">
+                 <option></option>
+                 <option value="Text">Text</option>
+                 <option value="List">List</option>
+             </select>
          </fieldset>
-         <fieldset id="listsettings" style="display: none;">
-             
-             
-         </fieldset>
-         <button style="background: grey;" id="settingset"></button>
+
+         <div class="horizonted" style="padding:0;">
+         <fieldset class="manylegends setter" id="listsettings">
+            <legend>
+              Options list
+            </legend>
+            
+          </fieldset>
+          <fieldset class="manylegends">
+            <legend>
+                <button class="CTA white-matte" style="padding: 5px 10px 10px 10px; width: 100px; text-align: center; margin-top: 7px;">
+                    <p style="margin-left: 0px; margin-bottom: 0px; font-size: 10px;">
+                    Add option
+                    </p>
+                </button>
+            </legend>
+            
+          </fieldset>
+
+          <fieldset class="dopgrid" style="width: calc( 100% - 10px );">
+            <label for="nameset">Option value:</label>
+            <input type="text" value="" id="optionset" style="width: 100%;">
+          </fieldset>
+
+        </div>
+          <script>
+            var manylegends = document.querySelectorAll(".manylegends");
+            var setmanylegends = document.querySelectorAll(".dopgrid");
+            
+            setmanylegends.forEach((setter,index) => {
+              var width = "calc( 100% - 10px )";
+              var height = setter.offsetHeight;
+              var top = setter.offsetTop;
+              var left = setter.offsetLeft;
+              for (var i=0; i<2 && manylegends.length >= i+index+1; i++){
+                var now = index*2+i; 
+                var style="width:"+width+"; height:"+(height)+"px;";
+               if (Math.trunc(now/2)===now/2){
+                 style+= "margin-top:"+(top-180)+"px; margin-left:"+left+"px;";
+               } else {
+                 style+= "margin-top:"+(top-160)+"px; margin-left:"+left+"px;";
+               }
+             console.log(style);   
+             manylegends[now].setAttribute("style", style);
+            }
+            });
+          </script>
+         
+         <div style="width: 100%; padding: 5px; margin-top: 200px; position: sticky; height: 30px; display: grid; grid-template-columns: 50% 50%; grid-column-gap: 10px; grid-auto-rows: 30px;">
+            <div>
+                <button id="settingset" class="CTA emerald" style="padding: 5px 10px 0px 10px; width: calc( 100% - 20px ); text-align: center;">
+                    <p style="font-size: 14px;">Edit</p>
+                </button>
+            </div>
+            <div>
+                <a href="fieldlist.popup.html" class="CTA white-matte" style="padding: 5px 10px 10px 10px; width: calc( 100% - 20px ); text-align: center; margin-top: 7px;">
+                    <p style="margin-left: 0px; margin-bottom: 0px; font-size: 14px;">
+                    Cancel
+                    </p>
+                </a>
+            </div>
+        </div>
      </form>
+    </div>
 
      <script src="../public/js/addfield.popup.js"></script>
     </body>

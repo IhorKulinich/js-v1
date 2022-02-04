@@ -43,7 +43,7 @@
 
     <hr style="border-top: 1px solid black;">
 
-    <div style="padding: 5px; width: 100%; display: grid; grid-template-columns: 100%; grid-auto-rows: 30px; grid-row-gap: 10px;" id="fieldsgroup">
+    <div style="padding: 5px; width: 100%; display: grid; grid-template-columns: 100%; grid-auto-rows: 30px; grid-row-gap: 10px; max-height: ( 100% - 50px );" id="fieldsgroup">
             
         <div class="blured radied" style="display: grid; grid-template-columns: 20px calc( 100% - 90px) 20px 20px; grid-auto-rows: 100%; padding: 5px; grid-column-gap: 10px;" id="fielddiv">
             <div style="background: url('../img/dots.png') no-repeat; background-size: contain;"></div>
@@ -55,6 +55,13 @@
         </div>
 
     </div>
-    <script src="../public/js/fieldssettings.popup.js"></script>
+
+    <div style="width: 100%; padding: 5px; margin-top: 10px; position: sticky; height: 30px;">
+        <a href="addfield.popup.html" id="addfield" class="CTA emerald" style="padding: 5px 10px 0px 10px; width: calc( 100% - 20px ); text-align: center;">
+            <p style="font-size: 14px;">add</p>
+        </a>
+    </div>
+
+    <script src="../public/js/fieldlist.popup.js"></script>
   </body>
 </html>
