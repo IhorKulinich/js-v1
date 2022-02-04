@@ -35,26 +35,26 @@ hr .fs:after {
     display: inline;
 }
 
-    .chooseblock{
-        width: calc( 100% - 10px ); 
-        height: 42px; 
-        display: grid; 
-        grid-template-columns: 40px calc( 50% - 30px) calc( 50% - 30px); 
-        grid-auto-rows: 40px; 
-        grid-row-gap: 10px;
-        margin-top: 10px;
-    }
+.chooseblock{
+    width: calc( 100% - 10px ); 
+    height: 42px; 
+    display: grid; 
+    grid-template-columns: 40px calc( 50% - 30px) calc( 50% - 30px); 
+    grid-auto-rows: 40px; 
+    grid-row-gap: 10px;
+    margin-top: 10px;
+}
 
-    .chooseblock:first-child{
-        margin-top: 0px;
-    }
+.chooseblock:first-child{
+    margin-top: 0px;
+}
 
-    .choosepop{
-        padding: 5px 10px 5px 10px; 
-        width: 260px;
-        margin-top: 10px;
-    }
+.choosepop{
+    padding: 5px 10px 5px 10px; 
+    width: 260px;
+    margin-top: 10px;
+}
 
-    .choosepop:first-child{
-        margin-top: 0px;
-    }
+.choosepop:first-child{
+    margin-top: 0px;
+}
