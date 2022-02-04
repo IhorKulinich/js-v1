@@ -56,7 +56,7 @@ TrelloPowerUp.initialize({
           text: 'ОКАДО :3',
           callback: function(t) {
             return t.popup({
-              title: "...",
+              title: "ОКАДО :3",
               url: '../views/popup.html',
             });
           }
