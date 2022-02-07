@@ -48,6 +48,8 @@ t.render(function(t){
 
         document.getElementById("fieldsgroup").appendChild(listed);
 
+        document.getElementById("popfieldtext"+id).innerHTML = field.name;
+
       });
 
     });
