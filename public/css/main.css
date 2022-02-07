@@ -49,6 +49,12 @@ body{
   border-radius: 10px;
   background-size: cover;
 }
+
+.metal2 {
+  background: url('https://ihorkulinich.github.io/js-v1/img/menu.png') repeat-x #fff;
+  border-radius: 10px;
+  background-size: contain;
+}
       
 .hui {
   text-align: center;

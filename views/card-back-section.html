@@ -3,29 +3,188 @@
     <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
     <link rel="stylesheet" href="../public/css/card-back-section.css">
     <script src="https://p.trellocdn.com/power-up.min.js"></script>
-
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/css/card.css">
+    <link rel="stylesheet" href="../public/css/icon.css">
+    <link rel="stylesheet" href="../public/css/buttons.css">
+    <link rel="stylesheet" href="../public/css/text.css">
     <style>
-      metal {
-        border-radius: 5px;
-        background: url('../img/menu.png') repeat-x #fff;
-        border: 1px solid #999;
-        border-bottom: 1px solid #666;
-        box-shadow: inset 0px 0px 5px #999;
-        box-shadow: 0px 2px 6px #777;
-        background-size: contain;
-      }
-            
-      hui {
-        z-index: 3;
-        text-align: center;
-        margin-left: 4px;
-        margin-top: 4px;
-        font-size: small;
-      }
+
+      
+      
     </style>
   </head>
   <body>
-    <div class="metal hui" style="width: 100%;">
+    <div id="back">
+    </div>
+
+    <div id="topbardiv">
+      <div id="topmenu" style="height: 60px; width: calc( 100% - 20px ); z-index: 5;">
+        <div style="height: 45px; width: 100%; z-index: 5;" class="metal2 hui shadowed"></div>
+        <div style="margin-top: -45px; z-index: 5; width: 100%;">
+          <div id="hometopmenu" style="background: url('../img/smile.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-left: calc( 10% - 21px );" class="circle-link icon menuicon2"></div>
+          <div id="fieldstopmenu" style="background: url('../img/fields.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-left: calc( 20% - 21px );" class="circle-link icon menuicon2"></div>
+          <div id="statustopmenu" style="background: url('../img/stat.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-left: calc( 30% - 21px );" class="circle-link icon menuicon2"></div>
+          <div id="tasktopmenu" style="background: url('../img/task.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-left: calc( 40% - 21px );" class="circle-link icon menuicon2"></div>
+          <div id="mailtopmenu" style="background: url('../img/mails.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-left: calc( 50% - 21px );" class="circle-link icon menuicon2"></div>
+          <div id="commenttopmenu" style="background: url('../img/comm.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-left: calc( 60% - 21px );" class="circle-link icon menuicon2"></div>
+          <div id="checktopmenu" style="background: url('../img/check.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-left: calc( 70% - 21px );" class="circle-link icon menuicon2"></div>
+          <div id="timestopmenu" style="background: url('../img/times.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-left: calc( 80% - 21px );" class="circle-link icon menuicon2"></div>
+          <div id="docstopmenu" style="background: url('../img/folders.png') no-repeat; background-size: contain; z-index: 5; position: absolute; margin-left: calc( 90% - 21px );" class="circle-link icon menuicon2"></div>
+        </div>
+      </div> 
+    
+      <div style="height: 40px; width: 100%; margin-top: -15px;" id="circlestop">
+        <svg id="svgtop" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+          <defs id="svgtopdefs">
+            <style>
+              .smalltext{
+                font: italic 10px sans-serif;
+                letter-spacing: 2px;
+                fill: rgb(85, 85, 85);
+                transition: opacity 1s ease .2s;
+                z-index: 5; 
+              }
+            </style>
+         </defs>
+      </svg>
+      
+    </div>
+
+    <script>
+      var widmask = document.getElementById("circlestop").clientWidth;
+      var heimask = document.getElementById("circlestop").clientHeight;
+      var mar = widmask / 10;
+
+      // fieldstopmenu, statustopmenu, tasktopmenu, mailtopmenu, commenttopmenu, checktopmenu, timestopmenu, docstopmenu
+
+      var texts = ["Home", "Fields", "Status", "Tasks", "Mails", "Comments", "Checklist", "Times", "Docs"];
+      ["home", "fields", "status", "task", "mail", "comment", "check", "times", "docs"].forEach(function(id,ix){
+
+        var newpath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        [["id", id+"toppath"], ["fill", "transparent"]].forEach(function(attr){
+          newpath.setAttribute(attr[0], attr[1]);
+        });
+        document.getElementById("svgtop").appendChild(newpath);
+
+        var newtext = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        [["id", id+"toptextel"], ["dx","30"], ["class", "smalltext"], ["textLength", 300], ["lengthAdjust", "spacing"], ["style", "opacity: "+(ix === 0 ? 1 : 0)+";"]].forEach(function(attr){
+          newtext.setAttribute(attr[0], attr[1]);
+        });
+        document.getElementById("svgtop").appendChild(newtext);
+
+        newtext = document.createElementNS("http://www.w3.org/2000/svg", "textPath");
+        [["id", id+"toptextpath"], ["href", "#"+id+"toppath"]].forEach(function(attr){
+          newtext.setAttribute(attr[0], attr[1]);
+        });
+        document.getElementById(id+"toptextel").appendChild(newtext);
+        document.getElementById(id+"toptextpath").innerHTML = texts[ix];
+        document.getElementById(id+"toppath").setAttribute("d", "M "+((1+ix)*(mar+1)-38)+", 34 \n m 0, -30 \n a 30,30 0 1,0 60,0 \n a 30,30 0 1,0 -60,0");
+        
+        ["shadow", "border", "clip"].forEach(function(part,ine){
+          var clippath = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
+          clippath.setAttribute("id", id+"top"+part);
+          document.getElementById("svgtopdefs").appendChild(clippath);
+
+          var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+          [["cy", 0], ["r", 22-ine], ["fill", "white"]].forEach(function(attr){
+            circle.setAttribute(attr[0], attr[1]);
+          });
+          document.getElementById(id+"top"+part).appendChild(circle);
+        });
+  
+        ["topcircleshad", "topcircleborder", "topcircle"].forEach(function(part,ine){
+          var newdiv = document.createElement("div");
+          newdiv.setAttribute("id", id+part); 
+          if (ine === 2){
+            newdiv.setAttribute("class", "metal2 hui");
+          }
+          document.getElementById("circlestop").appendChild(newdiv);
+        });
+
+        ["topshadow","topborder","topclip"].forEach(function(id,ix,pre,ind){
+          document.getElementById(id+pre).childNodes[0].setAttribute("cx", (1+ix)*(mar+0.75)-5*ind-(8-ix)*0.25);
+        }.bind(null,id,ix));
+    
+      });
+
+      document.getElementById("svgtop").setAttribute("width", widmask);
+      document.getElementById("svgtop").setAttribute("height", heimask);
+
+      document.getElementById("svgtop").setAttribute("viewBox", "0 0 "+widmask+" "+heimask);
+
+      function setMenus(id){
+        var str = id.split("topmenu")[0];
+        var els = [str+"topcircleshad", str+"topcircleborder", str+"topcircle"];
+        els.forEach(function(el){
+          el = document.getElementById(el);
+          el.style.width = widmask+"px";
+          el.style.height = heimask+"px";
+          el.style["margin-top"] = -heimask+"px";
+        });
+      }
+      
+      var menus = ["hometopmenu", "fieldstopmenu", "statustopmenu", "tasktopmenu", "mailtopmenu", "commenttopmenu", "checktopmenu", "timestopmenu", "docstopmenu"];
+      menus.forEach(setMenus);
+
+      function showing(str){
+        var el = document.getElementById(str+"topcircle");
+        el.style["clip-path"] = "url(#"+str+"topclip)";
+        el.style["margin-top"] = "-40px";
+        el.style.opacity = "1";
+        el = document.getElementById(str+"topcircleshad");
+        el.style["clip-path"] = "url(#"+str+"topshadow)";
+        el.style["margin-top"] = "-40px";
+        el.style.opacity = "0.15";
+        el = document.getElementById(str+"topcircleborder");
+        el.style["clip-path"] = "url(#"+str+"topborder)";
+        el.style["margin-top"] = "-40px";
+        el.style.opacity = "1";
+        el = document.getElementById(str+"topmenu");
+        el.style["margin-top"] = "30px";
+        document.getElementById("hometoptextel").style.opacity = 1;
+        document.getElementById(str+"toptextel").style.opacity = 1;
+      }
+      
+      function over(elem){
+        var str = elem.target.id.split("topmenu")[0];
+        showing(str);
+        document.getElementById(elem.target.id).removeEventListener("mouseover",over);
+        var others = menus.filter((str) => str != elem.target.id);
+        setout(others);
+      }
+
+      function setout(arr){
+        arr.forEach(function(id){
+          var str = id.split("topmenu")[0];
+          document.getElementById(str+"toptextel").style.opacity = 0;
+          var els = [str+"topcircleshad", str+"topcircleborder", str+"topcircle"];
+          els.forEach(function(el){
+            document.getElementById(el).style.opacity = "0";
+            document.getElementById(el).style["margin-top"]="-40px";
+          });
+          var el = document.getElementById(id);
+          el.style["margin-top"] = "8px";
+          el.addEventListener("mouseover",over);
+        });
+        showing("home");
+      }
+
+      function menuout(){
+        setout(menus);
+      }
+
+      menus.forEach(function(id){
+        document.getElementById(id).addEventListener("mouseover",over);
+      });
+
+      document.getElementById("topmenu").addEventListener("mouseleave",menuout);
+      showing("home");
+
+    </script>
+    
+    <div class="metal2 hui" style="width: calc( 100% - 20px); margin-top: 5px; height: 20px; padding-top: 4px;">
       Fields
     </div>
     <form class="fieldgrid" id="fieldsection">

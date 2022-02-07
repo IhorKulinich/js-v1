@@ -3,22 +3,6 @@ body{
     color: black;
 }
 
-.menuicon{
-  border-radius: 20px; 
-  height: 21px; 
-  width: 21px; 
-  margin-top: 8.5px;
-  margin-left: 18px;
-}
-
-.menuicon:first-child{
-  margin-top: 14px;
-}
-
-.menuicon:hover{
-  margin-left: 50px;
-}
-
 
 /* Style overwrite */
 

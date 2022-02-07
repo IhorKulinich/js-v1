@@ -15,7 +15,33 @@
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
   
+.menuicon{
+    border-radius: 20px; 
+    height: 21px; 
+    width: 21px; 
+    margin-top: 8.5px;
+    margin-left: 18px;
+  }
   
+  .menuicon:first-child{
+    margin-top: 14px;
+  }
+  
+  .menuicon:hover{
+    margin-left: 50px;
+  }
+
+  .menuicon2{
+    border-radius: 20px; 
+    height: 21px; 
+    width: 21px; 
+    margin-top: 8.5px;
+    margin-left: 18px;
+  }
+  
+  .menuicon2:hover{
+    margin-left: 50px;
+  }
   
 [class*=icon].interactive:hover,[class*=icon].interactive.active,[class*=block2].interactive:hover,[class*=block2].interactive.active {
     --offset-amount: 10px;

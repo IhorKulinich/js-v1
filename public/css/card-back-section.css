@@ -16,3 +16,23 @@ body {
     grid-row-gap: 20px;
     grid-auto-rows: 60px;
   }
+/*"home", "fields", "status", "task", "mail", "comment", "check", "times", "docs"*/
+  #hometopcircleshad, #fieldstopcircleshad, #statustopcircleshad, #tasktopcircleshad, #mailtopcircleshad, #commenttopcircleshad, #checktopcircleshad, #timestopcircleshad, #docstopcircleshad{
+    background-color: #777; 
+    opacity: 0;
+    transition: opacity 1s ease .1s, margin-left 1s ease .1s;
+    margin-top: -20px;
+  }
+  
+  #hometopcircleborder, #fieldstopcircleborder, #statustopcircleborder, #tasktopcircleborder, #mailtopcircleborder, #commenttopcircleborder, #checktopcircleborder, #timestopcircleborder, #docstopcircleborder{
+    background-color: #999; 
+    opacity: 0;
+    transition: opacity 1s ease .1s, margin-left 1s ease .1s;
+    margin-top: -20px;
+  }
+  
+  #hometopcircle, #fieldstopcircle, #statustopcircle, #tasktopcircle, #mailtopcircle, #commenttopcircle, #checktopcircle, #timestopcircle, #docstopcircle{
+    transition: opacity 1s ease .1s, margin-left 1s ease .1s;
+    margin-top: -20px;
+    opacity: 0;
+  }
