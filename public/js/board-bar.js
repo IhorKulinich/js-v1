@@ -38,7 +38,7 @@ var adder = () => {
     fieldset.childNodes.forEach((node) => node.id != "butdiv" ? node.remove() : null);
     document.getElementById("typelabel").remove();
     
-    label = document.createElement("label");
+    var label = document.createElement("label");
     label.setAttribute("for", "namefield");
     label.setAttribute("id", "namelabel1");
     
@@ -58,12 +58,12 @@ var adder = () => {
     document.getElementById("namefield").addEventListener("change", addname); 
     break;
   case "list":
-    date = Date.now();
+    var date = Date.now();
     newfielddata = {"type": "list", "name": null, "id": date, "value": null, "values": []};
     fieldset.childNodes.forEach((node) =>  node.id != "butdiv" ? node.remove() : null);
     document.getElementById("typelabel").remove();
     
-    label = document.createElement("label");
+    var label = document.createElement("label");
     label.setAttribute("for", "namefield2");
     label.setAttribute("id", "namelabel2");
     
@@ -76,7 +76,7 @@ var adder = () => {
     
     fieldset.insertBefore(namefield, document.getElementById("submiter"));
     
-    addname = () => {
+    var addname = () => {
       newfielddata.name = document.getElementById("namefield2").value;
       console.log(newfielddata);
     };
