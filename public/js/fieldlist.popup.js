@@ -1,6 +1,3 @@
-//var p = document.getElementById("para1");
-//var p_prime = p.cloneNode(true);
-
 var Promise = TrelloPowerUp.Promise;
 
 var t = TrelloPowerUp.iframe();
