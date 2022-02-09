@@ -301,6 +301,8 @@ var adder = () => {
 
         case "List":
 
+          document.getElementById("textsettingsb").style.display = "none";
+
           document.getElementById("optsbdiv").style.display = "";
 
           break;
