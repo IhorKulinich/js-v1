@@ -315,15 +315,15 @@ var adder = () => {
 
             console.log(par.childNodes);
 
-            var label = par.childNodes[0];
+            var label = par.childNodes[1];
 
-            label.setAttribute("for", "optionsetb"+par.childNodes.length/2);
+            label.setAttribute("for", "optionsetb"+(par.childNodes.length-3)/2);
 
             document.getElementById("addoptsfieldb").appendChild(label);
 
-            var input = par.childNodes[1];
+            var input = par.childNodes[3];
 
-            input.setAttribute("id", "optionsetb"+par.childNodes.length/2);
+            input.setAttribute("id", "optionsetb"+(par.childNodes.length-3)/2);
 
             document.getElementById("addoptsfieldb").appendChild(input);
 
