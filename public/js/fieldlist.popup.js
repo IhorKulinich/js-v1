@@ -52,6 +52,8 @@ t.render(function(t){
 
         document.getElementById("popfieldtext"+id).innerHTML = field.name;
 
+        console.log(document.getElementById("popfield"+id));
+
       });
 
     });
