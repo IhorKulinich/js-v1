@@ -279,6 +279,67 @@
                   </select>
               </fieldset>
 
+              <div class="horizonted" style="padding: 0; display: none;">
+                <fieldset class="manylegends setter" id="listsettingsb">
+                   <legend>
+                     Options list
+                   </legend>
+                   
+                 </fieldset>
+                 <fieldset class="manylegends">
+                   <legend>
+                       <button class="CTA white-matte" style="padding: 5px 10px 10px 10px; width: 100px; text-align: center; margin-top: 7px;">
+                           <p style="margin-left: 0px; margin-bottom: 0px; font-size: 10px;">
+                           Add option
+                           </p>
+                       </button>
+                   </legend>
+                   
+                 </fieldset>
+       
+                 <fieldset class="dopgrid" style="width: calc( 100% - 60px );">
+                   <label for="optionsetb">Option value:</label>
+                   <input type="text" value="" id="optionsetb" style="width: 100%;">
+                 </fieldset>
+       
+               </div>
+                 <script>
+                   var manylegends = document.querySelectorAll(".manylegends");
+                   var setmanylegends = document.querySelectorAll(".dopgrid");
+                   
+                   setmanylegends.forEach((setter,index) => {
+                     var width = "calc( 100% - 10px )";
+                     var height = setter.offsetHeight;
+                     var top = setter.offsetTop;
+                     var left = setter.offsetLeft;
+                     for (var i=0; i<2 && manylegends.length >= i+index+1; i++){
+                       var now = index*2+i; 
+                       var style="width:"+width+"; height:"+(height)+"px;";
+                      if (Math.trunc(now/2)===now/2){
+                        style+= "margin-top:"+(top-180)+"px; margin-left:"+left+"px;";
+                      } else {
+                        style+= "margin-top:"+(top-160)+"px; margin-left:"+left+"px;";
+                      }
+                    console.log(style);   
+                    manylegends[now].setAttribute("style", style);
+                   }
+                   });
+                 </script>
+                
+                <div style="width: calc( 100% - 60px ); padding: 5px; margin-top: 200px; position: sticky; height: 30px; display: none; grid-template-columns: 50% 50%; grid-column-gap: 10px; grid-auto-rows: 30px;">
+                   <div>
+                       <button id="settingsetb" class="CTA emerald" style="padding: 5px 10px 0px 10px; width: calc( 100% - 20px ); text-align: center;">
+                           <p style="font-size: 14px;">Edit</p>
+                       </button>
+                   </div>
+                   <div>
+                       <a href="fieldlist.popup.html" class="CTA white-matte" style="padding: 5px 10px 10px 10px; width: calc( 100% - 20px ); text-align: center; margin-top: 7px;">
+                           <p style="margin-left: 0px; margin-bottom: 0px; font-size: 14px;">
+                           Cancel
+                           </p>
+                       </a>
+                   </div>
+               </div>
 
               </form>
             </div>
