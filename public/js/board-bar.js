@@ -297,6 +297,8 @@ var adder = () => {
 
         case "List":
 
+          document.getElementById("optsbdiv").style.display = "";
+
           break;
 
       }
