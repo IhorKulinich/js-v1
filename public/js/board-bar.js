@@ -311,7 +311,21 @@ var adder = () => {
 
             document.getElementById("listaddtingsb").style.height = "100px";
 
-            //.cloneNode(true);
+            var par = document.getElementById("addoptsfieldb").cloneNode(true);
+
+            console.log(par.childNodes);
+
+            var label = par.childNodes[0];
+
+            label.setAttribute("for", "optionsetb"+par.childNodes.length/2);
+
+            document.getElementById("addoptsfieldb").appendChild(label);
+
+            var input = par.childNodes[1];
+
+            input.setAttribute("id", "optionsetb"+par.childNodes.length/2);
+
+            document.getElementById("addoptsfieldb").appendChild(input);
 
           });
 
