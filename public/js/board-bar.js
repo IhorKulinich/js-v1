@@ -323,7 +323,7 @@ var adder = () => {
 
             var input = par.childNodes[3];
 
-            input.setAttribute("id", "optionsetb"+(par.childNodes.length-3)/2);
+            input.id = "optionsetb"+(par.childNodes.length-3)/2;
 
             document.getElementById("addoptsfieldb").appendChild(input);
 
