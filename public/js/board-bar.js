@@ -305,6 +305,12 @@ var adder = () => {
 
           document.getElementById("optsbdiv").style.display = "";
 
+          document.getElementById("addoptb").addEventListener("click", function(){
+
+            
+
+          });
+
           break;
 
       }
