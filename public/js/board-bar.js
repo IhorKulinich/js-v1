@@ -293,7 +293,7 @@ var adder = () => {
 
         case "Text":
 
-          document.getElementById("buttonsinpb").style.display = "";
+          document.getElementById("buttonsinpb").style.display = "grid";
 
           document.getElementById("settingsetb").disabled = false;
 
