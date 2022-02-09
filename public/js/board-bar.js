@@ -311,6 +311,10 @@ var adder = () => {
 
             document.getElementById("listaddtingsb").style.height = (parseInt(document.getElementById("listaddtingsb").style.height.split("px")[0])+50)+"px";
 
+            document.getElementById("listaddtingsb").style["margin-top"] = (parseInt(document.getElementById("listaddtingsb").style["margin-top"].split("px")[0])-50)+"px";
+
+            document.getElementById("addoptsfieldb").style["margin-top"] = (parseInt(document.getElementById("listaddtingsb").style["margin-top"].split("px")[0])-50)+"px";
+
             var par = document.getElementById("addoptsfieldb").cloneNode(true);
 
             var label = par.childNodes[1];
