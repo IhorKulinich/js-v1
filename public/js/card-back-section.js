@@ -98,7 +98,13 @@ function changeValue(id,data,t,res){
                     
     console.log(res);
                     
-    return t.set('card', 'shared', 'fieldcard', res);
+    return t.set('card', 'shared', 'fieldcard', res)
+    
+    .then(function(id){
+
+        console.log(document.getElementById(id+"f"));
+
+    }.bind(null, id));
                
 }
               

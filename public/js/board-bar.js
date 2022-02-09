@@ -57,6 +57,10 @@ var adder = () => {
         
       case "text":
 
+        console.log(document.getElementById("butdiv"));
+
+        console.log(document.getElementById("submitter"));
+
         var date = Date.now();
 
         newfielddata = {"type": "text", "name": null, "id": date, "value": null};
@@ -100,6 +104,10 @@ var adder = () => {
         break;
 
     case "list":
+
+      console.log(document.getElementById("butdiv"));
+
+      console.log(document.getElementById("submitter"));
 
       var date = Date.now();
 
