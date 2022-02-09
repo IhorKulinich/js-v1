@@ -287,7 +287,19 @@ var adder = () => {
 
     document.getElementById("typelistsetb").addEventListener("change", function(t){
 
+      switch(document.getElementById("typelistsetb").value){
 
+        case "Text":
+
+          document.getElementById("settingsetb").disabled = false;
+
+          break;
+
+        case "List":
+
+          break;
+
+      }
 
     }.bind(null,t));
 
