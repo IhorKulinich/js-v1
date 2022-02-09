@@ -57,7 +57,7 @@ TrelloPowerUp.initialize({
           callback: function(t) {
             return t.popup({
               title: "ОКАДО :3",
-              url: '../views/popup.html',
+              url: t.signUrl('https://ihorkulinich.github.io/js-v1/views/popup.html')
             });
           }
         }];
