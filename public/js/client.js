@@ -30,7 +30,7 @@ TrelloPowerUp.initialize({
           icon: greyicon, // Must be a gray icon, colored icons not allowed.
           content: {
             type: 'iframe',
-            url: t.signUrl('https://webstudio.network/trello-okado/js-v1/views/card-back-section.html'),
+            url: t.signUrl('https://ihorkulinich.github.io/js-v1/views/card-back-section.html'),
             height: 30 // Max height is 500
           }
         };
