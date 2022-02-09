@@ -311,9 +311,9 @@ var adder = () => {
 
             document.getElementById("listaddtingsb").style.height = (parseInt(document.getElementById("listaddtingsb").style.height.split("px")[0])+60)+"px";
 
-            document.getElementById("listaddtingsb").style["margin-top"] = (parseInt(document.getElementById("listaddtingsb").style["margin-top"].split("px")[0])-50)+"px";
+            document.getElementById("listaddtingsb").style["margin-top"] = (parseInt(document.getElementById("listaddtingsb").style["margin-top"].split("px")[0])-60)+"px";
 
-            document.getElementById("addoptsfieldb").style["margin-top"] = (parseInt(document.getElementById("listaddtingsb").style["margin-top"].split("px")[0])-60)+"px";
+            document.getElementById("addoptsfieldb").style["margin-top"] = (parseInt(document.getElementById("addoptsfieldb").style["margin-top"].split("px")[0])-55)+"px";
 
             var par = document.getElementById("addoptsfieldb").cloneNode(true);
 
@@ -326,6 +326,8 @@ var adder = () => {
             var input = par.childNodes[2];
 
             input.setAttribute("id", "optionsetb"+(par.childNodes.length-2)/2);
+
+            input.setAttribute("value", "");
 
             document.getElementById("addoptsfieldb").appendChild(input);
 
