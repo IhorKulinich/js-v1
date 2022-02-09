@@ -79,7 +79,7 @@ var adder = () => {
 
         console.log(document.getElementById("submiter"));
 
-        fieldset.insertBefore(label, document.getElementById("submiter"));
+        document.getElementById("butdiv").insertBefore(label, document.getElementById("submiter"));
         
         document.getElementById("namelabel1").innerHTML = "choose name";
 
@@ -89,7 +89,7 @@ var adder = () => {
 
         namefield.setAttribute("id", "namefield");
         
-        fieldset.insertBefore(namefield, document.getElementById("submiter"));
+        document.getElementById("butdiv").insertBefore(namefield, document.getElementById("submiter"));
         
         var addname = () => {
 
@@ -123,7 +123,7 @@ var adder = () => {
 
       label.setAttribute("id", "namelabel2");
       
-      fieldset.insertBefore(label, document.getElementById("submiter"));
+      document.getElementById("butdiv").insertBefore(label, document.getElementById("submiter"));
       
       document.getElementById("namelabel2").innerHTML = "choose name";
 
@@ -133,7 +133,7 @@ var adder = () => {
 
       namefield.setAttribute("id", "namefield2");
       
-      fieldset.insertBefore(namefield, document.getElementById("submiter"));
+      document.getElementById("butdiv").insertBefore(namefield, document.getElementById("submiter"));
       
       var addname = () => {
 
@@ -151,7 +151,7 @@ var adder = () => {
 
       label.setAttribute("id", "valuelabel");
       
-      fieldset.insertBefore(label, document.getElementById("submiter"));
+      document.getElementById("butdiv").insertBefore(label, document.getElementById("submiter"));
       
       document.getElementById("valuelabel").innerHTML = "choose value";
 
@@ -161,7 +161,7 @@ var adder = () => {
 
       valuefield.setAttribute("id", "valuefield");
       
-      fieldset.insertBefore(valuefield, document.getElementById("submiter"));
+      document.getElementById("butdiv").insertBefore(valuefield, document.getElementById("submiter"));
       
       var addvalue = () => {
 
