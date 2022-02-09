@@ -281,6 +281,18 @@ var adder = () => {
 
   document.getElementById("textsettingsb").style.display = "";
 
+  document.getElementById("namesetb").addEventListener("change", function(t){
+
+    document.getElementById("typelistsetb").disabled = false;
+
+    document.getElementById("typelistsetb").addEventListener("change", function(t){
+
+
+
+    }.bind(null,t));
+
+  }.bind(null,t));
+
 }
 
 document.getElementById("addfield").addEventListener("click", adder);
