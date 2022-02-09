@@ -279,6 +279,8 @@ var adder = () => {
 
   // window.addfieldset.addEventListener("submit", submit);
 
+  document.getElementById("addfield").style.display = 'none';
+
   document.getElementById("textsettingsb").style.display = "";
 
   document.getElementById("namesetb").addEventListener("change", function(t){
@@ -290,6 +292,8 @@ var adder = () => {
       switch(document.getElementById("typelistsetb").value){
 
         case "Text":
+
+          document.getElementById("settingsetb").style.display = "";
 
           document.getElementById("settingsetb").disabled = false;
 
