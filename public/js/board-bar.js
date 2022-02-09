@@ -307,23 +307,21 @@ var adder = () => {
 
           document.getElementById("addoptb").addEventListener("click", function(){
 
-            document.getElementById("listsettingsb").style.height = "100px";
+            document.getElementById("listsettingsb").style.height = (parseInt(document.getElementById("listsettingsb").style.height.split("px")[0])+50)+"px";
 
-            document.getElementById("listaddtingsb").style.height = "100px";
+            document.getElementById("listaddtingsb").style.height = (parseInt(document.getElementById("listaddtingsb").style.height.split("px")[0])+50)+"px";
 
             var par = document.getElementById("addoptsfieldb").cloneNode(true);
 
-            console.log(par.childNodes);
-
             var label = par.childNodes[1];
 
-            label.setAttribute("for", "optionsetb"+(par.childNodes.length-3)/2);
+            label.setAttribute("for", "optionsetb"+(par.childNodes.length-2)/2);
 
             document.getElementById("addoptsfieldb").appendChild(label);
 
-            var input = par.childNodes[3];
+            var input = par.childNodes[2];
 
-            input.id = "optionsetb"+(par.childNodes.length-3)/2;
+            input.setAttribute("id", "optionsetb"+(par.childNodes.length-2)/2);
 
             document.getElementById("addoptsfieldb").appendChild(input);
 
