@@ -148,9 +148,9 @@ function changeValuer(id,data,t,res){
                           
     }
                       
-console.log(res);
+    console.log(res);
                     
-return t.set('card', 'shared', 'fieldcard', res);
+    return t.set('card', 'shared', 'fieldcard', res);
               
 }
 
@@ -308,6 +308,24 @@ t.render(function(){
                 
                 }
           
+            } else {
+
+                console.log(document.getElementById('fieldsection'));
+
+                document.getElementById('fieldsection').childNodes.forEach(function(el){
+
+                    console.log(el);
+
+                    if (el.tagName === "input"){
+
+                        var ev =  element.getEventListeners();
+
+                        console.log(ev);
+
+                    }
+
+                });
+
             }
         
         }
