@@ -19,6 +19,8 @@ t.render(function(t){
       data.forEach(function(field, ind, dat){
 
         console.log(document.getElementById("fielddiv"));
+
+        console.log(document.getElementById("fieldsgroup"));
           
         var listed = document.getElementById("fielddiv").cloneNode(true);
 
