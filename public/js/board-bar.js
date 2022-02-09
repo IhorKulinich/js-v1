@@ -307,7 +307,11 @@ var adder = () => {
 
           document.getElementById("addoptb").addEventListener("click", function(){
 
-            
+            document.getElementById("listsettingsb").style.height = "100px";
+
+            document.getElementById("listaddtingsb").style.height = "100px";
+
+            //.cloneNode(true);
 
           });
 
