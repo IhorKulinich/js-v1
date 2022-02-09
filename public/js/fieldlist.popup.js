@@ -17,6 +17,8 @@ t.render(function(t){
       let data = datar.fields;
 
       data.forEach(function(field, ind, dat){
+
+        console.log(document.getElementById("fielddiv"));
           
         var listed = document.getElementById("fielddiv").cloneNode(true);
 
