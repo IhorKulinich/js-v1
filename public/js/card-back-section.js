@@ -12,25 +12,15 @@ function changeValue(id,data,t,res){
                   
     var nv = document.getElementById(id+"f").value;
     
-    console.log(res);
-    
     if (res === undefined || res.fields[0] === null){
         
-        console.log(res);
-        
         res = {"fields":[{"id": id, "value": ""}]};
-        
-        console.log(res);
         
         return t.set('card', 'shared', 'fieldcard', res);
     
     }
     
-    console.log(data);
-    
     data.filter(function(field){
-        
-        console.log(res.fields);
         
         return ! res.fields.some(function(el){
             
@@ -40,27 +30,15 @@ function changeValue(id,data,t,res){
         
     }).forEach(function(field){
         
-        console.log(field);
-        
         res.fields.push({"id": field.id, "value": ""});
         
-        console.log(res);
-        
     });
-    
-    console.log(res);
                     
     var founded = res.fields;
-    
-    console.log(res);
-    
-    console.log(founded);
     
     if (founded.length !=0){
         
         founded = founded.filter(function(id,field){
-        
-            console.log(field); 
             
             return field.id === id;
             
@@ -76,8 +54,6 @@ function changeValue(id,data,t,res){
     
     if ( founded.length != 0 ? bool : false){
         
-        console.log(res);
-        
         res.fields = res.fields.map(function(nv, field, index, data){
             
             if (field.id === id){
@@ -87,8 +63,6 @@ function changeValue(id,data,t,res){
             }
         
         }.bind(null,nv));
-        
-        console.log(res);
     
     } else {
                             
@@ -102,8 +76,6 @@ function changeValue(id,data,t,res){
     
     .then(function(id){
 
-        console.log(document.getElementById(id+"f"));
-
     }.bind(null, id));
                
 }
@@ -111,8 +83,6 @@ function changeValue(id,data,t,res){
 function changeValuer(id,data,t,res){
                   
     var nv = document.getElementById(id+"f").value;
-                  
-    console.log(nv);
                 
     if (res === undefined){
         
@@ -147,8 +117,6 @@ function changeValuer(id,data,t,res){
         res.fields.push({"id": id, "value": nv});
                           
     }
-                      
-    console.log(res);
                     
     return t.set('card', 'shared', 'fieldcard', res);
               
@@ -161,16 +129,10 @@ t.render(function(){
   .then(function(datar){
       
     let data = datar.fields;
-
-    console.log(datar);
-    
-    console.log(data);
     
     return t.get('card', 'shared', 'fieldcard')
     
     .then(function(datacard){
-        
-        console.log(datacard);
         
         var res = datacard;
         
@@ -183,9 +145,7 @@ t.render(function(){
         datacard = datacard.fields;
         
         for (var i=0; i<data.length; i++){
-            
-          console.log(document.getElementById(data[i].id+"f") === undefined || document.getElementById(data[i].id+"f") === null);
-            
+        
           if (document.getElementById(data[i].id+"f") === undefined || document.getElementById(data[i].id+"f") === null){
           
             var newdiv = document.createElement("div");
@@ -222,8 +182,6 @@ t.render(function(){
                       
                         founded = founded.filter(function(id,field){
                             
-                            console.log(id); 
-                            
                             return field.id === id;
                             
                         }.bind(null, id));
@@ -243,16 +201,8 @@ t.render(function(){
                         console.log(er);
                   
                     }
-              
-                    console.log(id+"d");
-                  
-                    console.log(document.getElementById(id+"d"));
                   
                     document.getElementById(id+"d").appendChild(newfield);
-                  
-                    console.log(id+"f");
-                  
-                    console.log(document.getElementById(id+"f"));
                   
                     document.getElementById(id+"f").addEventListener("change", changeValue.bind(null,id,data,t,res)); 
               
@@ -312,15 +262,35 @@ t.render(function(){
 
                 console.log(document.getElementById('fieldsection'));
 
+                datacard = datacard.filter(function(id,field){
+                            
+                    return field.id === id;
+                    
+                }.bind(null, id))[0];
+
+                document.getElementById(id+"f").value = datacard;
+
+                console.log(document.getElementById(id+"f"));
+
                 document.getElementById('fieldsection').childNodes.forEach(function(el){
 
                     console.log(el);
 
-                    if (el.tagName === "input"){
+                    if (el.childNodes.length !=0 ){
 
-                        var ev =  element.getEventListeners();
+                        el.childNodes.forEach(function(node){
 
-                        console.log(ev);
+                            console.log(node);
+
+                            if (node.tagName === "input"){
+
+                                var ev = node.getEventListeners();
+        
+                                console.log(ev);
+        
+                            }
+
+                        });
 
                     }
 
